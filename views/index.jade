@@ -1,0 +1,43 @@
+extends layout
+//script(src='/fb/fb.js')
+block content
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+  script(src='https://www.google.com/jsapi')
+  script(src='/js/googlecharts.js')
+  script(src='/js/fb.js')
+
+  table
+    tbody
+      tr.header
+        td(style='width:900px;')
+          img(src='/img/foodi_logo_500px.png')
+          p.subtitle ... food directions that unleash our potential
+
+        td.header_right
+          div(id="fb-root")
+          div(class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="false")
+      tr
+        td(rowspan="2", style="width:900px;")
+          table(id="maptop")
+            tr
+              td
+                div(class="styled-select gray")
+                  select(id="trade_type")
+                    option(value="Import") Import
+                    option(value="Export") Export
+              td
+                div(onclick='reset();', style="float:left;")
+                  a.pure-button(href="#") Reset
+          div(id="regions_div", style="width: 875px; height: 450px;")
+          p Crops trade flow across the world. Where color intensity is linked to the amount of current imports or exports belonging to a selected country. 
+          div(id="right" class="fb-like" data-share="true" data-width="450" data-show-faces="true")
+        td
+          div.title(id="index_title")
+          div(id="chart_div")
+          div.title(id="product_title")
+          div(id="product_images")
+      tr
+        td
+          div(id="facebook-header")
+          div(id="fb-root")
+          div(id='fb-comments', class="fb-comments", data-href="https://spaceapp2015-niklaskolbe.c9.io", data-width="350" data-numposts="5" data-colorscheme="light", style="display:hidden;")
